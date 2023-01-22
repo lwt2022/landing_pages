@@ -1,5 +1,12 @@
 require 'sinatra'
+require 'sinatra/reloader'
+require 'tilt/erubis'
+
+configure do
+  set :erb, :escape_html => true
+end
+
 
 get '/' do
-  "Welcome to my landing page!"
+  erb :index
 end
